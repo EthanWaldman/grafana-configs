@@ -1,0 +1,22 @@
+[
+  {
+    "name": "demo",
+    "type": "elasticsearch",
+    "typeLogoUrl": "public/app/plugins/datasource/elasticsearch/img/elasticsearch.svg",
+    "access": "proxy",
+    "url": "http://localhost:9200",
+    "password": "",
+    "user": "",
+    "database": "logstash-*",
+    "basicAuth": false,
+    "basicAuthUser": "",
+    "basicAuthPassword": "",
+    "withCredentials": false,
+    "isDefault": true,
+    "jsonData": {
+      "esVersion": 5,
+      "timeField": "@timestamp"
+    },
+    "secureJsonFields": null
+  }
+]
