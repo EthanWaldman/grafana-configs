@@ -15,6 +15,6 @@
 			ITEM_URI=${ITEM_TYPE}
 		fi
 		echo "Loading ${ITEM_TYPE}: ${ITEM_NAME}..."
-		echo "curl -X POST --user admin:admin http://localhost:3001/api/${ITEM_URI} -d @${CONFIG_INPUT}"
+		curl -X POST --user admin:admin http://localhost:3001/api/${ITEM_URI} -d @${CONFIG_INPUT}
 	done
 	exit
