@@ -1,6 +1,8 @@
 #!/bin/bash
 #
-	for CONFIG_INPUT in *.json
+	TYPE=$1
+
+	for CONFIG_INPUT in ${TYPE}_*.json
 	do
 		ITEM_TYPE=`basename ${CONFIG_INPUT} | cut -d'_' -f1`
 		ITEM_NAME=`basename ${CONFIG_INPUT} | cut -d'_' -f2- \
@@ -15,6 +17,6 @@
 			ITEM_URI=${ITEM_TYPE}
 		fi
 		echo "Loading ${ITEM_TYPE}: ${ITEM_NAME}..."
-		curl -X POST --user admin:admin http://localhost:3001/api/${ITEM_URI} -d @${CONFIG_INPUT}
+		curl -X POST --user admin:admin http://localhost:3001/api/${ITEM_URI} -d @${CONFIG_INPUT} -H "Content-Type: application/json"
 	done
 	exit
